@@ -1,6 +1,6 @@
 # Ambrosio - The Personal Assistant
 
-This bot is a sample Ambrosio to conceive for Worshop Enei 2019, power by Critical Techworks
+This bot is a sample Ambrosio to conceive for **************, power by **********
 This bot has been created using [Microsoft Bot Framework][1], 
 
 # Prerequisites
