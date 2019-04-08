@@ -1,8 +1,6 @@
-﻿using AmbrosioBot.Middleware.Telemetry;
-
-namespace AmbrosioBot
+﻿namespace AmbrosioBot
 {
-    using AmbrosioBot.Middleware.Telemetry;
+    using global::AmbrosioBot.Middleware.Telemetry;
     using Microsoft.Bot.Builder.AI.Luis;
     using Microsoft.Bot.Builder.AI.QnA;
     using Microsoft.Bot.Configuration;

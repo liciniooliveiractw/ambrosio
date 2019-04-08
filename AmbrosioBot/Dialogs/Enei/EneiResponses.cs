@@ -2,7 +2,7 @@
 
 namespace AmbrosioBot.Dialogs.Enei
 {
-    using AmbrosioBot.Dialogs.Enei.Resources;
+    using global::AmbrosioBot.Dialogs.Enei.Resources;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.TemplateManager;
     using Microsoft.Bot.Schema;

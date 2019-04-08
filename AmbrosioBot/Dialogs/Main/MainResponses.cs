@@ -3,7 +3,7 @@
 namespace AmbrosioBot.Dialogs.Main
 {
     using AdaptiveCards;
-    using AmbrosioBot.Dialogs.Main.Resources;
+    using global::AmbrosioBot.Dialogs.Main.Resources;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.TemplateManager;
     using Microsoft.Bot.Schema;

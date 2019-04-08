@@ -2,7 +2,7 @@
 
 namespace AmbrosioBot.Dialogs.Main
 {
-    using AmbrosioBot.Dialogs.Enei;
+    using global::AmbrosioBot.Dialogs.Enei;
     using Luis;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.Dialogs;
