@@ -1,0 +1,65 @@
+{
+  "name": "EchoBot",
+  "description": "",
+  "services": [
+    {
+      "type": "endpoint",
+      "name": "development",
+      "endpoint": "http://localhost:3978/api/messages",
+      "appId": "",
+      "appPassword": "",
+      "id": "1"
+    },
+    //{
+    //    "type": "cosmosdb",
+    //    "id": "8",
+    //    "name": "bot-xxxxxxxxxxxxxxxxxx",
+    //    "serviceName": "bot-xxxxxxxxxxxxxxxxxx",
+    //    "tenantId": "4b8c522a-5a25-4f8e-9745-1e90e8932253",
+    //    "subscriptionId": "xxxxxxxxxxxxxxxxxx",
+    //    "resourceGroup": "bot-xxxxxxxxxxxxxxxxxx",
+    //    "endpoint": "https://bot-xxxxxxxxxxxxxxxxxx.documents.azure.com:443/",
+    //    "key": "xxxxxxxxxxxxxxxxxx",
+    //    "database": "botstate-db",
+    //    "collection": "botstate-collection"
+    //},
+    {
+      "type": "luis",
+      "name": "bot-xxxxxxxxxxxxxxxxxx_General",
+      "appId": "d6594471-0732-422b-8e24-b606bc7d8f44",
+      "authoringKey": "xxxxxxxxxxxxxxxxxx",
+      "subscriptionKey": "xxxxxxxxxxxxxxxxxx",
+      "version": "0.1",
+      "region": "westus",
+      "id": "general"
+    },
+    {
+      "type": "qna",
+      "name": "ChitChat",
+      "id": "chitchat",
+      "kbId": "0392f85b-a139-43fe-9800-290afaae901d",
+      "subscriptionKey": "xxxxxxxxxxxxxxxxxx",
+      "endpointKey": "mX3wTxAaocZuHQ37YWG8oA==!WWpJeJka626NYlCdOXV+OXYWBACF5Bzpqiz3QcotJtl7SuztZLy7HOU4uzXjisAt",
+      "hostname": "https://bot-xxxxxxxxxxxxxxxxxx-qnahost.azurewebsites.net/qnamaker"
+    },
+    {
+      "type": "dispatch",
+      "serviceIds": [
+        "general",
+        "faq",
+        "chitchat"
+      ],
+      "name": "bot-xxxxxxxxxxxxxxxxxx_Dispatch",
+      "appId": "01addc69-6122-47f1-ae67-6897012fa8f7",
+      "authoringKey": "xxxxxxxxxxxxxxxxxx",
+      "subscriptionKey": "xxxxxxxxxxxxxxxxxx",
+      "version": "Dispatch",
+      "region": "westus",
+      "id": "dispatch"
+    }
+  ],
+  "padlock": "xxxxxxxxxxxxxxxxxx",
+  "version": "2.0",
+  "path": "\\EchoBot\\EchoBot.bot",
+  "overrides": null
+}
