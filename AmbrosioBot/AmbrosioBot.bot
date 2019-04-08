@@ -60,6 +60,6 @@
   ],
   "padlock": "xxxxxxxxxxxxxxxxxx",
   "version": "2.0",
-  "path": "\\EchoBot\\EchoBot.bot",
+  "path": "\\AmbrosioBot.bot",
   "overrides": null
 }
