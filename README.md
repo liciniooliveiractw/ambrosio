@@ -54,8 +54,18 @@ msbot clone services --name 'AmbrosioBot' --luisAuthoringKey 'LUIS_AUTHORING_KEY
 ```bash
 'botFilePath': './YOUR_BOT_FILE.bot',
 'botFileSecret': 'YOUR_BOT_SECRET,
-```		
-
+```
+And update too "YOUR_BOT_FILE.bot", where service name is 'development', the appId and appPassword must be empty. 
+```bash
+{
+"type": "endpoint",
+"appId": "",
+"appPassword": "",
+"endpoint": "http://localhost:3978/api/messages",
+"id": "1",
+"name": "development"
+}
+```
 # Running Locally
 
 ## Visual Studio
@@ -65,7 +75,6 @@ msbot clone services --name 'AmbrosioBot' --luisAuthoringKey 'LUIS_AUTHORING_KEY
 ## Testing the bot using Bot Framework Emulator
 [Microsoft Bot Framework Emulator][5] is a desktop application that allows bot 
 developers to test and debug their bots on localhost or running remotely through a tunnel.
-- Install the [Bot Framework emulator][6].
 
 ## Connect to bot using Bot Framework Emulator **V4**
 - Launch the Bot Framework Emulator.
