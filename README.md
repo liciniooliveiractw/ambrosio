@@ -74,9 +74,9 @@ developers to test and debug their bots on localhost or running remotely through
 # Deploy the bot to Azure
 
 The deployment process assumes you have an account on Microsoft Azure and are able to log into the [Microsoft Azure Portal][60].
-    ```bash
-     az bot publish -g ambrosio-group -n AmbrosioBot --proj-file-path AmbrosioBot.csproj --version v4
-    ```
+```bash
+az bot publish -g ambrosio-group -n AmbrosioBot --proj-file-path AmbrosioBot.csproj --version v4
+```
 
 [1]: https://dev.botframework.com
 [2]: https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes
