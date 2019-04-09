@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 namespace AmbrosioBot
 {
-    using AmbrosioBot.Middleware;
+    using global::AmbrosioBot.Middleware;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Bot.Builder;
@@ -33,6 +33,9 @@ namespace AmbrosioBot
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+                builder.AddUserSecrets<Startup>();
 
             Configuration = builder.Build();
         }
@@ -128,13 +131,13 @@ namespace AmbrosioBot
             var conversationState = new ConversationState(dataStore);
             services.AddSingleton(conversationState);
 
-            services.AddBot<EchoBotBot>(options =>
+            services.AddBot<AmbrosioBot>(options =>
            {
                options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
 
                // Catches any errors that occur during a conversation turn and logs them to currently
                // configured ILogger.
-               ILogger logger = _loggerFactory.CreateLogger<EchoBotBot>();
+               ILogger logger = _loggerFactory.CreateLogger<AmbrosioBot>();
 
                options.OnTurnError = async (context, exception) =>
                {
