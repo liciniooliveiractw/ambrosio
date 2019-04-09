@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 namespace AmbrosioBot
 {
-    using AmbrosioBot.Dialogs.Main;
+    using global::AmbrosioBot.Dialogs.Main;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Schema;
@@ -21,7 +21,7 @@ namespace AmbrosioBot
     /// <see cref="IStatePropertyAccessor{T}"/> object are created with a singleton lifetime.
     /// </summary>
     /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1"/>
-    public class EchoBotBot : IBot
+    public class AmbrosioBot : IBot
     {
         private readonly ILogger logger;
         private readonly BotServices services;
@@ -34,7 +34,7 @@ namespace AmbrosioBot
         /// <param name="conversationState">The managed conversation state.</param>
         /// <param name="loggerFactory">A <see cref="ILoggerFactory"/> that is hooked to the Azure App Service provider.</param>
         /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#windows-eventlog-provider"/>
-        public EchoBotBot(BotServices botServices, ConversationState conversationState, ILoggerFactory loggerFactory)
+        public AmbrosioBot(BotServices botServices, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
             services = botServices ?? throw new System.ArgumentNullException(nameof(botServices));
 
@@ -48,7 +48,7 @@ namespace AmbrosioBot
                 throw new System.ArgumentNullException(nameof(loggerFactory));
             }
 
-            logger = loggerFactory.CreateLogger<EchoBotBot>();
+            logger = loggerFactory.CreateLogger<AmbrosioBot>();
             logger.LogTrace("Turn start.");
 
             dialogs = new DialogSet(conversationState.CreateProperty<DialogState>(nameof(AmbrosioBot)));
