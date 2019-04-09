@@ -70,6 +70,40 @@ namespace AmbrosioBot
         /// <seealso cref="IMiddleware"/>
         public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
         {
+
+            //await BasicMessageActivity(turnContext);
+
+            await AdvanceMessageActivity(turnContext);
+        }
+
+        /// <summary>
+        /// Basics the massage activity.
+        /// </summary>
+        /// <param name="turnContext">The turn context.</param>
+        /// <returns></returns>
+        private static async Task BasicMessageActivity(ITurnContext turnContext)
+        {
+            // Handle Message activity type, which is the main activity type within a conversational interface
+            // Message activities may contain text, speech, interactive cards, and binary or unknown attachments.
+            // see https://aka.ms/about-bot-activity-message to learn more about the message and other activity types
+            if (turnContext.Activity.Type == ActivityTypes.Message)
+            {
+                // Echo back to the user whatever they typed.
+                await turnContext.SendActivityAsync($"You sent '{turnContext.Activity.Text}'");
+            }
+            else
+            {
+                await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
+            }
+        }
+
+        /// <summary>
+        /// Advance Message Activity using qna maker and luis cognitive services.
+        /// </summary>
+        /// <param name="turnContext">The turn context.</param>
+        /// <returns></returns>
+        private async Task AdvanceMessageActivity(ITurnContext turnContext)
+        {
             // Client notifying this bot took to long to respond (timed out)
             if (turnContext.Activity.Code == EndOfConversationCodes.BotTimedOut)
             {

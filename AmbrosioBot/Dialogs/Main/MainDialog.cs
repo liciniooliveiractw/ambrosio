@@ -118,5 +118,19 @@ namespace AmbrosioBot.Dialogs.Main
                     break;
             }
         }
+
+        protected override async Task OnEventAsync(DialogContext dc, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // Check if there was an action submitted from intro card
+            if (dc.Context.Activity.Value != null)
+            {
+                dynamic value = dc.Context.Activity.Value;
+                if (value.action == "startOnboarding")
+                {
+                    await dc.BeginDialogAsync(nameof(EneiDialog));
+                    return;
+                }
+            }
+        }
     }
 }

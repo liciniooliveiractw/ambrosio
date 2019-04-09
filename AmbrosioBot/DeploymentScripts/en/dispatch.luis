@@ -4652,6 +4652,27 @@
       "intent": "q_chitchat",
       "entities": []
     },
+
+    {
+      "text": "national metting of computer students",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "enei",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "What is enei?",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "Tell me about enei?",
+      "intent": "l_general",
+      "entities": []
+    }
   ],
   "settings": []
 }

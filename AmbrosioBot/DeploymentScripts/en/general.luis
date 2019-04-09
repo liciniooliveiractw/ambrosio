@@ -41,6 +41,9 @@
     },
     {
       "name": "Stop"
+    },
+    {
+      "name": "Enei"
     }
   ],
   "entities": [
@@ -1711,6 +1714,26 @@
     {
       "text": "turn off stop",
       "intent": "Stop",
+      "entities": []
+    },
+    {
+      "text": "national metting of computer students",
+      "intent": "Enei",
+      "entities": []
+    },
+    {
+      "text": "enei",
+      "intent": "Enei",
+      "entities": []
+    },
+    {
+      "text": "What is enei?",
+      "intent": "Enei",
+      "entities": []
+    },
+    {
+      "text": "Tell me about enei?",
+      "intent": "Enei",
       "entities": []
     }
   ],

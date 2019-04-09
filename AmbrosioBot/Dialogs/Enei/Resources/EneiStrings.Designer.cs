@@ -39,7 +39,7 @@ namespace AmbrosioBot.Dialogs.Enei.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EchoBot.Dialogs.Enei.Resources.EneiStrings", typeof(EneiStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AmbrosioBot.Dialogs.Enei.Resources.EneiStrings", typeof(EneiStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

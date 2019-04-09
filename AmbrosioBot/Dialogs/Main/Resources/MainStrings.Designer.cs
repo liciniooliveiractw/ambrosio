@@ -45,7 +45,7 @@ namespace AmbrosioBot.Dialogs.Main.Resources
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EchoBot.Dialogs.Main.Resources.MainStrings", typeof(MainStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AmbrosioBot.Dialogs.Main.Resources.MainStrings", typeof(MainStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
