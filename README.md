@@ -36,25 +36,27 @@ Choose Settings and make a note of the Authoring Key for later use.
 
 2 - Open up a Command Prompt
 
-3 - Login into your Azure Account using the Azure CLI and set subscriptions that you have acess to in the Azure Portal
-    ```bash
-     az login
-     az account set --subscription "YOUR SUBSCRIPTION AZURE GUID"
-    ```
-4 - Run the msbot clone services command to deploy your services and configure a .bot file in your project. 
-NOTE: After deployment is complete, you must make note of the bot file secret that is shown in the Command Prompt window for later use.
-Please go first to https://apps.dev.microsoft.com and manually create a new application, making note of the AppId and Password/Secret. 
-    
-    ```bash
-     msbot clone services --name 'AmbrosioBot' --luisAuthoringKey 'LUIS_AUTHORING_KEY' --folder 'DeploymentScripts\en'
-     --location 'centralus' --% --appSecret 'APP_PASSWORD_SECRET' --appId APP_ID
-    ```
-
-5 - After deployment is complete, update appsettings.json with your bot file secret.
+3 - Login into your Azure Account using the Azure CLI and set
+subscriptions that you have acess to in the Azure Portal
 	```bash
-     	'botFilePath': './YOUR_BOT_FILE.bot'
-     	'botFileSecret': 'YOUR_BOT_SECRET'
-    	```		
+	az login
+	az account set --subscription "YOUR SUBSCRIPTION AZURE GUID"
+	```
+4 - Run the msbot clone services command to deploy your services and configure a .bot file in your project. 
+
+NOTE: After deployment is complete, you must make note of the bot file secret that is shown in the Command Prompt window for later use.
+Please go first to https://apps.dev.microsoft.com and manually create a new application, 
+making note of the AppId and Password/Secret.
+```bash
+msbot clone services --name 'AmbrosioBot' --luisAuthoringKey 'LUIS_AUTHORING_KEY' --folder 'DeploymentScripts\en'--location 'centralus' --% --appSecret 'APP_PASSWORD_SECRET' --appId APP_ID
+```
+
+5 - After deployment is complete, update appsettings.json with your bot file secret
+```bash
+'botFilePath': './YOUR_BOT_FILE.bot',
+'botFileSecret': 'YOUR_BOT_SECRET,
+```		
+
 # Running Locally
 
 ## Visual Studio
