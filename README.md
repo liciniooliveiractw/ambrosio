@@ -66,6 +66,7 @@ And update too "YOUR_BOT_FILE.bot", where service name is 'development', the app
 "name": "development"
 }
 ```
+Finally, restart the emulator and rebuild the solution.
 # Running Locally
 
 ## Visual Studio
