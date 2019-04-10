@@ -47,7 +47,7 @@ NOTE: After deployment is complete, you must make note of the bot file secret th
 Please go first to https://apps.dev.microsoft.com and manually create a new application, 
 making note of the AppId and Password/Secret.
 ```bash
-msbot clone services --name 'AmbrosioBot' --luisAuthoringKey 'LUIS_AUTHORING_KEY' --folder 'DeploymentScripts\en'--location 'centralus' --% --appSecret 'APP_PASSWORD_SECRET' --appId APP_ID
+msbot clone services --name 'AmbrosioBot-[nickname]' --luisAuthoringKey 'LUIS_AUTHORING_KEY' --folder 'DeploymentScripts\en'--location 'centralus' --% --appSecret 'APP_PASSWORD_SECRET' --appId APP_ID
 ```
 
 5 - After deployment is complete, update appsettings.json with your bot file secret
