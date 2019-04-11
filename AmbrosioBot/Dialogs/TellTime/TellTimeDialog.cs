@@ -12,7 +12,7 @@ namespace AmbrosioBot.Dialogs.TellTime
 {
     public class TellTimeDialog : ComponentDialog
     {
-        private ResponseTokens _responder = new ResponseTokens();
+        private TellTimeResponses _responder = new TellTimeResponses();
 
         public TellTimeDialog(BotServices services)
             : base(nameof(TellTimeDialog))

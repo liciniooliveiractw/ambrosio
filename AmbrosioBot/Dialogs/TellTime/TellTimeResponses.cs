@@ -25,6 +25,21 @@ namespace AmbrosioBot.Dialogs.TellTime
             }
         };
 
+        public async Task ReplyWithTokens(ITurnContext turnContext, string templateId, IDictionary<string, string> tokens, object data = null)
+        {
+            BotAssert.ContextNotNull(turnContext);
+
+            // apply template
+            Activity boundActivity = await RenderTemplate(turnContext, turnContext.Activity?.AsMessageActivity()?.Locale, templateId, data).ConfigureAwait(false);
+            boundActivity.Text = ResponseTokens.ReplaceToken(boundActivity.Text, tokens);
+            boundActivity.Speak = ResponseTokens.ReplaceToken(boundActivity.Speak, tokens);
+            if (boundActivity != null)
+            {
+                await turnContext.SendActivityAsync(boundActivity);
+                return;
+            }
+            return;
+        }
         public TellTimeResponses()
         {
             Register(new DictionaryRenderer(_responseTemplates));
