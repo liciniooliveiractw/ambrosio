@@ -44,8 +44,14 @@ namespace AmbrosioBot.Dialogs.Main
                         ssml: MainStrings.GREETING,
                         inputHint: InputHints.AcceptingInput)
                 },
-                { ResponseIds.Help, (context, data) => BuildHelpCard(context, data) },
-                { ResponseIds.Intro, (context, data) => BuildIntroCard(context, data) },
+                { ResponseIds.Help,
+                    (context, data) =>
+                        BuildHelpCard(context, data)
+                },
+                { ResponseIds.Intro,
+                    (context, data) => 
+                        BuildIntroCard(context, data)
+                },
             }
         };
 

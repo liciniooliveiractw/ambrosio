@@ -1,8 +1,10 @@
-﻿using AmbrosioBot.Dialogs.Enei;
+﻿using System.Collections.Generic;
+using AmbrosioBot.Utils;
 
 namespace AmbrosioBot.Dialogs.Main
 {
     using global::AmbrosioBot.Dialogs.Enei;
+    using global::AmbrosioBot.Dialogs.TellTime;
     using Luis;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.Dialogs;
@@ -27,6 +29,8 @@ namespace AmbrosioBot.Dialogs.Main
             this.loggerFactory = loggerFactory;
 
             AddDialog(new EneiDialog(this.services));
+            AddDialog(new TellTimeDialog(this.services));
+
         }
 
         protected override async Task OnStartAsync(DialogContext dc, CancellationToken cancellationToken = default(CancellationToken))
@@ -82,7 +86,11 @@ namespace AmbrosioBot.Dialogs.Main
                                     await innerDc.BeginDialogAsync(nameof(EneiDialog));
                                     break;
                                 }
-
+                            case LuisGeneral.Intent.TellTime:
+                                {
+                                    await innerDc.BeginDialogAsync(nameof(TellTimeDialog));
+                                    break;
+                                }
                             case LuisGeneral.Intent.None:
                             default:
                                 {

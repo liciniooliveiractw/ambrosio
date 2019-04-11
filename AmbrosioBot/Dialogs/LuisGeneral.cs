@@ -32,7 +32,8 @@ namespace Luis
             ShowPrevious,
             StartOver,
             Stop,
-            Enei
+            Enei,
+            TellTime
         };
 
         public Dictionary<Intent, IntentScore> Intents;
