@@ -40,4 +40,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <PropertyGroup>
+    <UserSecretsId>0425159e-e99d-438f-8f57-425acedcaf63</UserSecretsId>
+  </PropertyGroup>
 </Project>
