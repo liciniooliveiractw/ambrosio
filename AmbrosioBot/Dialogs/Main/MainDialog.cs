@@ -110,6 +110,10 @@ namespace AmbrosioBot.Dialogs.Main
                         {
                             await innerDc.Context.SendActivityAsync(answers[0].Answer);
                         }
+                        else
+                        {
+                            await responder.ReplyWith(innerDc.Context, MainResponses.ResponseIds.Confused);
+                        }
                     }
                     break;
 
