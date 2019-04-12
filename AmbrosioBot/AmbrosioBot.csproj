@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\ambrosioAssistent.png" />
+    <None Include="wwwroot\ambrosio.png" />
   </ItemGroup>
 
   <ItemGroup>
