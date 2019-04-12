@@ -1802,7 +1802,7 @@
   ],
   "luis_schema_version": "3.0.0",
   "versionId": "0.1",
-  "name": "ambrosio",
+  "name": "ambrosio-luis",
   "desc": "",
   "culture": "en-us"
 }
