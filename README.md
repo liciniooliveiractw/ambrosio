@@ -78,7 +78,7 @@ developers to test and debug their bots on localhost or running remotely through
 
 ## Connect to bot using Bot Framework Emulator **V4**
 * Launch the Bot Framework Emulator.
-* File -> Open bot and open `AmbrosioBot-[nickname].bot`.
+* `File > Open Bot Configuration...` and select `AmbrosioBot-[nickname].bot`.
 
 # Deploy the bot to Azure
 
