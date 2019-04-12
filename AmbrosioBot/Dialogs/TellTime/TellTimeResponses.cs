@@ -1,13 +1,10 @@
-﻿using Microsoft.Bot.Builder.TemplateManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AmbrosioBot.Dialogs.Enei.Resources;
-using AmbrosioBot.Dialogs.TellTime.Resources;
+﻿using AmbrosioBot.Dialogs.TellTime.Resources;
 using AmbrosioBot.Utils;
 using Microsoft.Bot.Builder;
+using Microsoft.Bot.Builder.TemplateManager;
 using Microsoft.Bot.Schema;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AmbrosioBot.Dialogs.TellTime
 {
@@ -25,21 +22,6 @@ namespace AmbrosioBot.Dialogs.TellTime
             }
         };
 
-        public async Task ReplyWithTokens(ITurnContext turnContext, string templateId, IDictionary<string, string> tokens, object data = null)
-        {
-            BotAssert.ContextNotNull(turnContext);
-
-            // apply template
-            Activity boundActivity = await RenderTemplate(turnContext, turnContext.Activity?.AsMessageActivity()?.Locale, templateId, data).ConfigureAwait(false);
-            boundActivity.Text = ResponseTokens.ReplaceToken(boundActivity.Text, tokens);
-            boundActivity.Speak = ResponseTokens.ReplaceToken(boundActivity.Speak, tokens);
-            if (boundActivity != null)
-            {
-                await turnContext.SendActivityAsync(boundActivity);
-                return;
-            }
-            return;
-        }
         public TellTimeResponses()
         {
             Register(new DictionaryRenderer(_responseTemplates));

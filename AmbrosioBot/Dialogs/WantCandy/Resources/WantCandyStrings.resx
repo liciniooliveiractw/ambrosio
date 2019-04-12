@@ -117,11 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="WelcomeEneiMessage" xml:space="preserve">
-    <value>The National Meeting of Computer Science Students is one of the biggest events in the area of technology in Portugal bringing together computer science students from all the country's colleges.
-
-Recognized for its quality and variety of themes and activities, it has as a priority the contact between participants and companies, as well as the socialization, the conviviality and the exchange of experiences and knowledge among those present.
-
-Or so I'm told...</value>
+  <data name="CakeRespponse" xml:space="preserve">
+    <value>Cake is good... like once a year... </value>
+  </data>
+  <data name="CandyCaneResponse" xml:space="preserve">
+    <value>The perfect blend of young and old, sugar and a cane!</value>
+  </data>
+  <data name="ChocolateResponse" xml:space="preserve">
+    <value>Uhh chocolate, excellent choice! I see you're a person with a good taste... I'm starting to like you! </value>
+  </data>
+  <data name="IWantCandy" xml:space="preserve">
+    <value>Sure, what kind? I would recommend chocolate!</value>
+  </data>
+  <data name="JellyBeansResponse" xml:space="preserve">
+    <value>Well, I personally prefer my beans overcooked and with rice but... to each is own!</value>
   </data>
 </root>

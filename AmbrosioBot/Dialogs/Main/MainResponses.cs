@@ -65,20 +65,7 @@ namespace AmbrosioBot.Dialogs.Main
             var introCard = File.ReadAllText(MainStrings.INTRO_PATH);
             var card = AdaptiveCard.FromJson(introCard).Card;
             var attachment = new Attachment(AdaptiveCard.ContentType, content: card);
-
-            var response = MessageFactory.Attachment(attachment, ssml: card.Speak, inputHint: InputHints.AcceptingInput);
-
-            response.SuggestedActions = new SuggestedActions
-            {
-                Actions = new List<CardAction>()
-                {
-                    new CardAction(type: ActionTypes.ImBack, title: MainStrings.HELP_BTN_TEXT_1, value: MainStrings.HELP_BTN_VALUE_1),
-                    new CardAction(type: ActionTypes.ImBack, title: MainStrings.HELP_BTN_TEXT_2, value: MainStrings.HELP_BTN_VALUE_2),
-                    new CardAction(type: ActionTypes.OpenUrl, title: MainStrings.HELP_BTN_TEXT_3, value: MainStrings.HELP_BTN_VALUE_3),
-                },
-            };
-
-            return response;
+            return MessageFactory.Attachment(attachment, ssml: card.Speak, inputHint: InputHints.AcceptingInput);
         }
 
         public static IMessageActivity BuildHelpCard(ITurnContext turnContext, dynamic data)
@@ -114,6 +101,8 @@ namespace AmbrosioBot.Dialogs.Main
             public const string Greeting = "greeting";
             public const string Help = "help";
             public const string Intro = "intro";
+
+            public const string StartOnboarding = "startOnboarding";
         }
     }
 }

@@ -22,7 +22,7 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "I am Ambrósio, your bot assistent car. May I help you?",
+      "text": "I am Ambrósio, your car assistant. How may I help you?",
       "wrap": true,
       "maxLines": 0
     }

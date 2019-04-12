@@ -33,7 +33,8 @@ namespace Luis
             StartOver,
             Stop,
             Enei,
-            TellTime
+            TellTime,
+            WantCandy
         };
 
         public Dictionary<Intent, IntentScore> Intents;

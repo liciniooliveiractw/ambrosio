@@ -1,7 +1,11 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
+﻿using AmbrosioBot.Dialogs.Enei;
+using AmbrosioBot.Dialogs.TellTime;
+using AmbrosioBot.Dialogs.WantCandy;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
 namespace AmbrosioBot
 {
+    using System;
     using global::AmbrosioBot.Dialogs.Main;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.Dialogs;
@@ -23,36 +27,56 @@ namespace AmbrosioBot
     /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1"/>
     public class AmbrosioBot : IBot
     {
-        private readonly ILogger logger;
-        private readonly BotServices services;
+        /// <summary>
+        /// The dialogs.
+        /// </summary>
         private DialogSet dialogs;
+
+        private readonly StateAccessors accessors;
 
         /// <summary>
         /// Initializes a new instance of the class.
         /// </summary>
         /// <param name="botServices">The bot service</param>
+        /// <param name="accessors">The accessors.</param>
         /// <param name="conversationState">The managed conversation state.</param>
-        /// <param name="loggerFactory">A <see cref="ILoggerFactory"/> that is hooked to the Azure App Service provider.</param>
-        /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#windows-eventlog-provider"/>
-        public AmbrosioBot(BotServices botServices, ConversationState conversationState, ILoggerFactory loggerFactory)
+        /// <param name="loggerFactory">A <see cref="ILoggerFactory" /> that is hooked to the Azure App Service provider.</param>
+        /// <exception cref="ArgumentNullException">
+        /// botServices
+        /// or
+        /// conversationState
+        /// or
+        /// loggerFactory
+        /// </exception>
+        /// <exception cref="System.ArgumentNullException">accessors</exception>
+        /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#windows-eventlog-provider" />
+        public AmbrosioBot(
+            BotServices botServices,
+            ConversationState conversationState,
+            StateAccessors accessors,
+            ILoggerFactory loggerFactory)
         {
-            services = botServices ?? throw new System.ArgumentNullException(nameof(botServices));
+            if (loggerFactory == null)
+            {
+                throw new ArgumentNullException(nameof(loggerFactory));
+            }
 
             if (conversationState == null)
             {
-                throw new System.ArgumentNullException(nameof(conversationState));
+                throw new ArgumentNullException(nameof(conversationState));
             }
 
-            if (loggerFactory == null)
-            {
-                throw new System.ArgumentNullException(nameof(loggerFactory));
-            }
+            this.accessors = accessors ?? throw new ArgumentNullException(nameof(accessors));
+            var services = botServices ?? throw new ArgumentNullException(nameof(botServices));
 
-            logger = loggerFactory.CreateLogger<AmbrosioBot>();
+            var property = conversationState.
+                CreateProperty<DialogState>(nameof(DialogState));
+
+            dialogs = new DialogSet(property);
+            dialogs.Add(new MainDialog(services, loggerFactory));
+
+            var logger = loggerFactory.CreateLogger<AmbrosioBot>();
             logger.LogTrace("Turn start.");
-
-            dialogs = new DialogSet(conversationState.CreateProperty<DialogState>(nameof(AmbrosioBot)));
-            dialogs.Add(new MainDialog(services, conversationState, loggerFactory));
         }
 
         /// <summary>
@@ -70,41 +94,6 @@ namespace AmbrosioBot
         /// <seealso cref="IMiddleware"/>
         public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
         {
-
-            //await BasicMessageActivity(turnContext);
-
-            await AdvanceMessageActivity(turnContext);
-        }
-
-        /// <summary>
-        /// Basics the massage activity.
-        /// </summary>
-        /// <param name="turnContext">The turn context.</param>
-        /// <returns></returns>
-        private static async Task BasicMessageActivity(ITurnContext turnContext)
-        {
-            // Handle Message activity type, which is the main activity type within a conversational interface
-            // Message activities may contain text, speech, interactive cards, and binary or unknown attachments.
-            // see https://aka.ms/about-bot-activity-message to learn more about the message and other activity types
-            if (turnContext.Activity.Type == ActivityTypes.Message)
-            {
-                // Echo back to the user whatever they typed.
-                await turnContext.SendActivityAsync($"You sent '{turnContext.Activity.Text}'");
-            }
-            else
-            {
-                await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
-            }
-        }
-
-        /// <summary>
-        /// Advance Message Activity using qna maker and luis cognitive services.
-        /// </summary>
-        /// <param name="turnContext">The turn context.</param>
-        /// <returns></returns>
-        private async Task AdvanceMessageActivity(ITurnContext turnContext)
-        {
-            // Client notifying this bot took to long to respond (timed out)
             if (turnContext.Activity.Code == EndOfConversationCodes.BotTimedOut)
             {
                 var responseMessage = $"Timeout in {turnContext.Activity.ChannelId} channel: Bot took too long to respond.";
@@ -113,15 +102,17 @@ namespace AmbrosioBot
             }
 
             var dc = await dialogs.CreateContextAsync(turnContext);
-
             if (dc.ActiveDialog != null)
             {
-                var result = await dc.ContinueDialogAsync();
+                await dc.ContinueDialogAsync();
             }
             else
             {
                 await dc.BeginDialogAsync(nameof(MainDialog));
             }
+
+            await accessors.ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
+            await accessors.UserState.SaveChangesAsync(turnContext, false, cancellationToken);
         }
     }
 }
