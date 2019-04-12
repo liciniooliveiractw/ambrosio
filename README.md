@@ -7,13 +7,13 @@
 - If you don't have an Azure subscription, create a [free account][10].
 - Install the latest version of the [Azure CLI][11] tool. Version 2.0.52 or higher.
 - Azure Bot Service CLI tools (latest versions)
-    ```bash
-    npm install -g ludown luis-apis qnamaker botdispatch msbot chatdown
-    ```
+```bash
+npm install -g ludown luis-apis qnamaker botdispatch msbot chatdown
+```
 - LuisGen
-    ```bash
-     dotnet tool install -g luisgen 
-    ```
+```bash
+dotnet tool install -g luisgen 
+```
     
 - [Bot Framework Emulator 4.1][6] or newer installed
 
@@ -35,8 +35,8 @@ Choose Settings and make a note of the Authoring Key for later use.
 
 3 - Login into your Azure Account using the Azure CLI and set subscriptions that you have acess to in the Azure Portal
 ```bash
-    az login
-    az account set --subscription "YOUR SUBSCRIPTION AZURE GUID"
+az login
+az account set --subscription "YOUR SUBSCRIPTION AZURE GUID"
 ```
 4 - Run the msbot clone services command to deploy your services and configure a .bot file in your project. 
 
@@ -90,12 +90,7 @@ az bot publish -g ambrosio-group -n AmbrosioBot --proj-file-path AmbrosioBot.csp
 [3]: https://dotnet.microsoft.com/download/dotnet-core/2.1
 [5]: https://github.com/microsoft/botframework-emulator
 [6]: https://aka.ms/botframeworkemulator
-
 [10]: https://azure.microsoft.com/free/
 [11]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
 [12]: https://nodejs.org/en/
-
 [60]: https://portal.azure.com
-
-
-
