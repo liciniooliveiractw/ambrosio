@@ -31,7 +31,7 @@ Note that www.luis.ai refers to the US region and an authoring key retrieved fro
 Once signed in click on your name in the top right hand corner.
 Choose Settings and make a note of the Authoring Key for later use.
 
-2 - Open up a Command Prompt
+2 - Open a PowerShell (with NodeJS support). NOTE: The remaining commands will not run without it! Their syntax is specific to PowerShell.
 
 3 - Login into your Azure Account using the Azure CLI and set subscriptions that you have acess to in the Azure Portal
 ```bash
