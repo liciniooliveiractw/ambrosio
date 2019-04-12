@@ -4652,7 +4652,66 @@
       "intent": "q_chitchat",
       "entities": []
     },
-
+    {
+      "text": "I feel like something",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "I fancy something.",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "Ambrosio, I fancy something",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "Something is missing.",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "What's you favorite car?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "Mercedes or BMW?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "Is BMW is the best company?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "BMW or Audi?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "BMW or Ferrari?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "What is Ambrosio?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "Can you tell me something interesting.",
+      "intent": "q_chitchat",
+      "entities": []
+    },
+    {
+      "text": "Do you know any random facts?",
+      "intent": "q_chitchat",
+      "entities": []
+    },
     {
       "text": "national metting of computer students",
       "intent": "l_general",
@@ -4670,6 +4729,51 @@
     },
     {
       "text": "Tell me about enei?",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "do you have some candy",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "i want candy",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "i feel like eating candy",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "candy tastes good",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "some candy please",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "what time is it?",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "what time do you have?",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "can you tell me the hours?",
+      "intent": "l_general",
+      "entities": []
+    },
+    {
+      "text": "what's the time?",
       "intent": "l_general",
       "entities": []
     }
