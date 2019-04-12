@@ -82,6 +82,8 @@ developers to test and debug their bots on localhost or running remotely through
 
 # Deploy the bot to Azure
 
+Before the deploying the bot, make sure to go into Visual Studio and change the build action for the `bot` file to `Copy Always`. By default this file would not be copied to Azure and your bot would throw a `500 - Internal Server Error` ([https://stackoverflow.com/questions/52610698/bot-file-not-getting-deployed-to-azure-bot-service-v4/52613657#52613657](https://stackoverflow.com/questions/52610698/bot-file-not-getting-deployed-to-azure-bot-service-v4/52613657#52613657)).
+
 The deployment process assumes you have an account on Microsoft Azure and are able to log into the [Microsoft Azure Portal][60].
 ```bash
 az bot publish -g ambrosio-group -n AmbrosioBot-[nickname] --proj-file-path AmbrosioBot.csproj --version v4
