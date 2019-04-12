@@ -44,6 +44,12 @@
     },
     {
       "name": "Enei"
+    },
+    {
+      "name": "TellTime"
+    },
+    {
+      "name": "WantCandy" 
     }
   ],
   "entities": [
@@ -1734,6 +1740,51 @@
     {
       "text": "Tell me about enei?",
       "intent": "Enei",
+      "entities": []
+    },
+    {
+      "text": "do you have some candy",
+      "intent": "WantCandy",
+      "entities": []
+    },
+    {
+      "text": "i want candyy",
+      "intent": "WantCandy",
+      "entities": []
+    },
+    {
+      "text": "i feel like eating candy",
+      "intent": "WantCandy",
+      "entities": []
+    },
+    {
+      "text": "candy tastes good",
+      "intent": "WantCandy",
+      "entities": []
+    },
+    {
+      "text": "some candy please",
+      "intent": "WantCandy",
+      "entities": []
+    },
+    {
+      "text": "what time is it?",
+      "intent": "TellTime",
+      "entities": []
+    },
+    {
+      "text": "what time do you have?",
+      "intent": "TellTime",
+      "entities": []
+    },
+    {
+      "text": "can you tell me the hours?",
+      "intent": "TellTime",
+      "entities": []
+    },
+    {
+      "text": "what's the time?",
+      "intent": "TellTime",
       "entities": []
     }
   ],
