@@ -1,8 +1,5 @@
 # Ambrosio - The Personal Assistant
 
-This bot is a sample Ambrosio to conceive for **************, power by **********
-This bot has been created using [Microsoft Bot Framework][1], 
-
 # Prerequisites
 - [Visual Studio 2017 15.7][2] or newer installed.
 - [.Net Core 2.1][3] or higher installed.  
