@@ -35,8 +35,8 @@ Choose Settings and make a note of the Authoring Key for later use.
 
 3 - Login into your Azure Account using the Azure CLI and set subscriptions that you have acess to in the Azure Portal
 ```bash
-	az login
-	az account set --subscription "YOUR SUBSCRIPTION AZURE GUID"
+    az login
+    az account set --subscription "YOUR SUBSCRIPTION AZURE GUID"
 ```
 4 - Run the msbot clone services command to deploy your services and configure a .bot file in your project. 
 
