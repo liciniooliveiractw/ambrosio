@@ -16,8 +16,8 @@ namespace Luis
         public string AlteredText;
         public enum Intent
         {
-            l_general,
-            q_chitchat,
+            l_ambrosio_luis,
+            q_ambrosio_qna,
             None
         };
 

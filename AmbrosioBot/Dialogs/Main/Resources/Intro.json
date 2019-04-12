@@ -6,7 +6,7 @@
   "body": [
     {
       "type": "Image",
-      "url": "http://localhost:3978/ambrosioAssistent.png",
+      "url": "https://bot-enterprise-rsilva.azurewebsites.net/ambrosioAssistent.png",
       "size": "stretch"
     },
     {

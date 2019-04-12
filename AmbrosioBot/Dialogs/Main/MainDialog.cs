@@ -48,9 +48,9 @@ namespace AmbrosioBot.Dialogs.Main
             var appIntent = dispatchResult.TopIntent().intent;
             switch (appIntent)
             {
-                case Dispatch.Intent.l_general:
+                case Dispatch.Intent.l_ambrosio_luis:
                     // If dispatch result is general luis model
-                    services.LuisServices.TryGetValue("general", out var luisService);
+                    services.LuisServices.TryGetValue("ambrosio_luis", out var luisService);
 
                     if (luisService == null)
                     {
@@ -95,8 +95,8 @@ namespace AmbrosioBot.Dialogs.Main
                     }
                     break;
 
-                case Dispatch.Intent.q_chitchat:
-                    services.QnAServices.TryGetValue("chitchat", out var qnaServiceChitChat);
+                case Dispatch.Intent.q_ambrosio_qna:
+                    services.QnAServices.TryGetValue("ambrosio_qna", out var qnaServiceChitChat);
 
                     if (qnaServiceChitChat == null)
                     {

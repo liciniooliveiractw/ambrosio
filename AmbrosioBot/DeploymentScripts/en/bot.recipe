@@ -20,21 +20,21 @@
     },
     {
       "type": "luis",
-      "id": "ambrosio-luis",
-      "name": "ambrosio-luis"
+      "id": "ambrosio_luis",
+      "name": "ambrosio_luis"
     },
     {
       "type": "qna",
-      "id": "ambrosio-qna",
-      "name": "ambrosio-qna"
+      "id": "ambrosio_qna",
+      "name": "ambrosio_qna"
     },
     {
       "type": "dispatch",
       "id": "dispatch",
       "name": "Dispatch",
       "serviceIds": [
-        "ambrosio-luis",
-        "ambrosio-qna"
+        "ambrosio_luis",
+        "ambrosio_qna"
       ]
     }
   ]
