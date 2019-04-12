@@ -20,21 +20,21 @@
     },
     {
       "type": "luis",
-      "id": "general",
-      "name": "General"
+      "id": "luis",
+      "name": "ambrosio"
     },
     {
       "type": "qna",
-      "id": "chitchat",
-      "name": "ChitChat"
+      "id": "qna",
+      "name": "ambrosio"
     },
     {
       "type": "dispatch",
       "id": "dispatch",
       "name": "Dispatch",
       "serviceIds": [
-        "general",
-        "chitchat"
+        "luis",
+        "qna"
       ]
     }
   ]
